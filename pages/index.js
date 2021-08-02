@@ -1,7 +1,7 @@
 function HomePage () {
     return (
         <div>
-            <h1>Fabiano Garcia</h1>
+            Fabiano Garcia
         </div>
     )
 }
