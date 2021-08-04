@@ -8,13 +8,14 @@ const GlobalStyle = createGlobalStyle`
         margin: 0 auto;
         font-family: 'Roboto', sans-serif;
         background-color: ${({ theme }) => theme.colors.light};
+        color: ${({ theme }) => theme.colors.white};
     }
 `
 export default function App ({ Component, pageProps }) {
     return (
-        <Theme>
-        <GlobalStyle/>
+       <Theme>
+        <GlobalStyle />
         <Component { ...pageProps } />
-        </Theme>
+    </Theme>
     )
 }
