@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import HomePage from '.';
 import Theme from '../src/Theme'
 
 const GlobalStyle = createGlobalStyle`
@@ -7,15 +8,18 @@ const GlobalStyle = createGlobalStyle`
         heigth: 100%
         margin: 0 auto;
         font-family: 'Roboto', sans-serif;
-        background-color: ${({ theme }) => theme.colors.light};
-        color: ${({ theme }) => theme.colors.white};
+        background-color: ${({theme}) => theme.colors.light}
+        color: ${({theme}) => theme.colors.white}
+
+        
     }
-`
+    
+`;
 export default function App ({ Component, pageProps }) {
     return (
        <Theme>
         <GlobalStyle />
         <Component { ...pageProps } />
-    </Theme>
+        </Theme>
     )
 }

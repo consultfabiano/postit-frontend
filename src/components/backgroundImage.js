@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledBackground = styled.div`
- height: 100vh;
+ height: 90vh;
  background-image: url('/background.jpg');
  background-position: center;
  background-repeat: no-repeat;
