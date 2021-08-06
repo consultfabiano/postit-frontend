@@ -5,22 +5,19 @@ import FormSpace from "../src/components/LoginPage/formSpace";
 
 
 const StyledHomePage = styled.div`
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-       
+    width: 100%;
+    height: 600px;
+    background-image: linear-gradient(to right, white, black, white);       
 `
 
 function HomePage () {
     return (
-        <BackgroundImage>
             <StyledHomePage>
             <FormSpace>
-                
+            
             </FormSpace>
             </StyledHomePage>
-        </BackgroundImage>
+        
     )
 }
 

@@ -5,7 +5,7 @@ const theme = {
         primary: '#7D2ECC',
         light: '#F0F0F0',
         white: '#FFFFFF',
-        black: '#000000',
+        inputBackground: 'rgba(140, 140, 140, 0.5)',
     }
 }
 
