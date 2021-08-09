@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Form from './form'
 
 const StyledFormSpace = styled.div`
-
+    margin-top: -28px;
 `
 function FormSpace () {
     const [formState, setFormState] = useState(true)

@@ -3,7 +3,7 @@ import Input from '../Inputs/input'
 import Button from '../Buttons/button'
 
 const StyledForm = styled.form`
-    display-flex;
+    display:flex;
 
     @media (max-width: 550px) {
         flex-direcion: column;
