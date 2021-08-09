@@ -13,9 +13,7 @@ const StyledHomePage = styled.div`
 function HomePage () {
     return (
             <StyledHomePage>
-            <FormSpace>
-            
-            </FormSpace>
+            <FormSpace />
             </StyledHomePage>
         
     )
