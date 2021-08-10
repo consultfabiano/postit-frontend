@@ -31,7 +31,7 @@ const P = styled.p `
 
 function BoardName () {
     return (
-        <StyledBoardCards>
+        <StyledBoardCards >
             <H4>Card Name</H4>
             <P>Atualizado em 01 de janeiro de 2022</P>
         </StyledBoardCards>

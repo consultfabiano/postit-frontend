@@ -1,7 +1,3 @@
-/*continuar do minuto 8:10
-Formulário de login e cadastro
-*/
-
 import { useState } from 'react'
 import styled from "styled-components";
 
