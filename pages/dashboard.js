@@ -4,6 +4,7 @@ import InfoBar from '../src/components/InfoBar'
 
 import NewBoard from '../src/components/Dashboard/newBoard'
 import BoardList from '../src/components/Dashboard/dashboardList'
+import withAuth from '../src/HOCs/withAtuth'
 
 function DashboardPage () {
     return (
@@ -18,4 +19,4 @@ function DashboardPage () {
     )
 }
 
-export default DashboardPage
+export default withAuth(DashboardPage)
