@@ -13,10 +13,10 @@ const { NEXT_PUBLIC_API_URL } = process.env
 const StyledFormSpace = styled.div`
     margin-top: -28px;
 `
-function FormSpace () {
+function FormSpace ({ isLoginPage }) {
     const router = useRouter()
     const [cookie, setCookie] = useCookies(['authorization'])
-    const [formState, setFormState] = useState(true)
+    const [formState, setFormState] = useState(isLoginPage)
     const [error, setError]= useState()
 
     const handleLogin = ({ email, login }) => {

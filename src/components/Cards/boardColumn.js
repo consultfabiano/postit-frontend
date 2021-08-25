@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 import Postit from "./postit";
 import Button from '../Buttons/button'
-import StyledButton from "../Buttons/button";
 
 const StyledBoardColumn = styled.div `
     display: flex;

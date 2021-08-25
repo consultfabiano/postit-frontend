@@ -1,24 +1,23 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import BackgroundImage from "../src/components/backgroundImage";
-import FormSpace from "../src/components/LoginPage/formSpace";
-
+import BackgroundImage from '../src/components/backgroundImage'
+import FormSpace from '../src/components/LoginPage/formSpace'
 
 const StyledHomePage = styled.div`
-    width: 100%;
-    height: 600px;
-          
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 function HomePage () {
-    return (
-        <BackgroundImage>
-            <StyledHomePage>
-            <FormSpace />
-            </StyledHomePage>
-        </BackgroundImage>
-        
-    )
+  return (
+    <BackgroundImage>
+      <StyledHomePage>
+        <FormSpace isLoginPage />
+      </StyledHomePage>
+    </BackgroundImage>
+  )
 }
 
 export default HomePage

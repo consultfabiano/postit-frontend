@@ -4,6 +4,9 @@ import Infobar from '../src/components/InfoBar'
 import Subtitle from '../src/components/typography/subtitle'
 import BoardList from '../src/components/Board/boardList'
 
+import withAuth from '../src/HOCs/withAtuth'
+
+
 function Board () {
     return (
     <>
@@ -17,4 +20,4 @@ function Board () {
     )
 }
 
-export default Board
+export default withAuth(Board)
