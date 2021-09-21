@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import cookie from 'cookie'
 
 import H1 from '../src/components/typography/h1'
 import Container from '../src/components/layout/container'
@@ -9,29 +10,53 @@ import BoardList from '../src/components/Dashboard/dashboardList'
 import withAuth from '../src/HOCs/withAtuth'
 import APIClient from '../src/utils/APIClient'
 
-function DashboardPage ({ authorization }) {
-    const [boards, setBoards] = useState([])
+function DashboardPage ({ authorization, boards }) {
+    const [localBoards, setLocalBoards] = useState([])
 
-    useEffect(async()=> {
+    useEffect(async () => {
+        setLocalBoards(boards)
+      }, [boards])
+    
+      const handleCreateBoard = async (name) => {
         try {
-            const { data } = await APIClient(authorization).get(`/board/all`)
-            console.log(data)
-            setBoards(data)
-        }catch(err) {
-            console.error(err)
+          const { data } = await APIClient(authorization).post(`/board`, {
+            name
+          })
+          setLocalBoards([...localBoards, { ...data }])
+        } catch (err) {
+          console.error(err)
         }
-    }, [])
+      }
 
-    return (
+      return (
         <>
-            <Container>
-                <InfoBar />
-                <H1>Quadros</H1>
-                <NewBoard />
-                <BoardList boards={boards}/>
-            </Container>
+          <InfoBar />
+          <Container>
+            <H1>Quadros</H1>
+            <NewBoard onCreate={handleCreateBoard} />
+            <BoardList boards={localBoards} />
+          </Container>
         </>
-    )
-}
+      )
+    }
+
+    export async function getServerSideProps({ req }) {
+        try {
+          const { authorization } = cookie.parse(req.headers?.cookie || '')
+          const { data } = await APIClient(authorization).get(`/board/all`)
+      
+          return {
+            props: {
+              boards: data
+            }
+          }
+        } catch (err) {
+          return {
+            redirect: {
+              destination: '/login',
+            }
+          }
+        }
+      }
 
 export default withAuth(DashboardPage)
