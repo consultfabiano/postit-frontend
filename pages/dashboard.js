@@ -53,7 +53,7 @@ function DashboardPage ({ authorization, boards }) {
         } catch (err) {
           return {
             redirect: {
-              destination: '/login',
+              destination: '/',
             }
           }
         }
