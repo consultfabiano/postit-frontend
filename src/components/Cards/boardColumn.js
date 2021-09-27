@@ -22,10 +22,15 @@ const BoardContent = styled.div `
     flex: 1;
 `
 
-function BoardColumn ({ title }) {
+function BoardColumn ({ title, id, cards }) {
+    const titleDictionary = {
+        TODO: 'A fazer',
+        DOING: 'Em desenvolvimento',
+        DONE: 'Feito'
+    }
     return (
         <StyledBoardColumn>
-            <H4>{ title }</H4>
+            <H4>{ titleDictionary [title] || [title] }</H4>
             <BoardContent>
                 <Postit />
                 <Postit />
